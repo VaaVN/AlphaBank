@@ -132,9 +132,11 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
     },
   ];
-  cards();
-  about();
-  function cards() {
+  Cards();
+  About();
+  ServiceMenu();
+
+  function Cards() {
     let curCategory = 0;
     let cardHolder = document.querySelector("[data-js='cardHolder']");
     let catDisc = document.querySelector("[data-js='categoryDisc']");
@@ -181,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
       SetInfo();
     });
   }
-  function about() {
+  function About() {
     let curCategory2 = 0;
     let workBut = document.querySelector("[data-js='work']");
     let achiveBut = document.querySelector("[data-js='achive']");
@@ -203,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <p>третий год подряд по версии Forbse</p>
             </div>
             <div
-              class="infoFrame""
+              class="infoFrame"
             >
               <h2>Крупнейший частный банк</h2>
               <p>40 миллионов клиентов выбрали нас <br/> 
@@ -221,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <p>Стажировки для всех</p>
             </div>
             <div
-              class="infoFrame""
+              class="infoFrame"
             >
               <h2>Вакансии в Альфа-Банке</h2>
               <p>ждём вас в нашей команде</p>
@@ -243,6 +245,251 @@ document.addEventListener("DOMContentLoaded", () => {
     workBut.addEventListener("pointerdown", () => {
       curCategory2 = 1;
       achiveBut.classList.remove("selected");
+      SetInfo();
+    });
+  }
+  function ServiceMenu() {
+    let curCategory1 = 0;
+    let amobileBut = document.querySelector("[data-js='a-mobile']");
+    let atravelBut = document.querySelector("[data-js='a-travel']");
+    let afishaBut = document.querySelector("[data-js='afisha']");
+    let fuelBut = document.querySelector("[data-js='fuel']");
+    let splitBut = document.querySelector("[data-js='split']");
+    let insureBut = document.querySelector("[data-js='insure']");
+    let serviceMenu = document.querySelector("[data-js='serviceMenu']");
+    let but1 = [
+      amobileBut,
+      atravelBut,
+      afishaBut,
+      fuelBut,
+      splitBut,
+      insureBut,
+    ];
+    let selectVis = document.querySelector("[data-js='selectVis1']");
+    function SetInfo() {
+      serviceMenu.innerHTML = "";
+      let btn = but1[curCategory1];
+      selectVis.style.left = `${btn.offsetLeft}px`;
+      selectVis.style.top = `${btn.offsetTop}px`;
+      btn.classList.add("selected");
+      selectVis.style.width = `${btn.getBoundingClientRect().width}px`;
+      selectVis.style.height = `${btn.getBoundingClientRect().height}px`;
+      switch (curCategory1) {
+        case 0:
+          serviceMenu.innerHTML = `
+          <div
+              class="infoFrame"
+              style="grid-row: span 6; grid-column: span 2"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 5; grid-column: span 4"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 1; grid-column: span 4"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>`;
+          break;
+        case 1:
+          serviceMenu.innerHTML = `
+          <div
+              class="infoFrame"
+              style="grid-row: span 3; grid-column: span 1"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 5; grid-column: span 4"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 3; grid-column: span 1"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 3; grid-column: span 1"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 1; grid-column: span 4"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 3; grid-column: span 1"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>`;
+          break;
+        case 2:
+          serviceMenu.innerHTML = `
+          <div
+              class="infoFrame"
+              style="grid-row: span 5; grid-column: span 3"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 6; grid-column: span 3"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 1; grid-column: span 3"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>`;
+          break;
+        case 3:
+          serviceMenu.innerHTML = `
+          <div
+              class="infoFrame"
+              style="grid-row: span 5; grid-column: span 3"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 6; grid-column: span 3"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 1; grid-column: span 3"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>`;
+          break;
+        case 4:
+          serviceMenu.innerHTML = `
+          <div
+              class="infoFrame"
+              style="grid-row: span 6; grid-column: span 2"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 5; grid-column: span 2"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 6; grid-column: span 2"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 1; grid-column: span 2"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>`;
+          break;
+        case 5:
+          serviceMenu.innerHTML = `
+          <div
+              class="infoFrame"
+              style="grid-row: span 6; grid-column: span 2"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 5; grid-column: span 4"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>
+            <div
+              class="infoFrame"
+              style="grid-row: span 1; grid-column: span 4"
+            >
+              <h2>МЫ ЛУЧШИЕ</h2>
+              <p>третий год подряд по версии Forbse</p>
+            </div>`;
+          break;
+      }
+    }
+    SetInfo();
+    but1[0].addEventListener("pointerdown", () => {
+      curCategory1 = 0;
+      for (let i = 0; i < but1.length; i++) {
+        if (i != curCategory1) but1[i].classList.remove("selected");
+      }
+      SetInfo();
+    });
+    but1[1].addEventListener("pointerdown", () => {
+      curCategory1 = 1;
+      for (let i = 0; i < but1.length; i++) {
+        if (i != curCategory1) but1[i].classList.remove("selected");
+      }
+      SetInfo();
+    });
+    but1[2].addEventListener("pointerdown", () => {
+      curCategory1 = 2;
+      for (let i = 0; i < but1.length; i++) {
+        if (i != curCategory1) but1[i].classList.remove("selected");
+      }
+      SetInfo();
+    });
+    but1[3].addEventListener("pointerdown", () => {
+      curCategory1 = 3;
+      for (let i = 0; i < but1.length; i++) {
+        if (i != curCategory1) but1[i].classList.remove("selected");
+      }
+      SetInfo();
+    });
+    but1[4].addEventListener("pointerdown", () => {
+      curCategory1 = 4;
+      for (let i = 0; i < but1.length; i++) {
+        if (i != curCategory1) but1[i].classList.remove("selected");
+      }
+      SetInfo();
+    });
+    but1[5].addEventListener("pointerdown", () => {
+      curCategory1 = 5;
+      for (let i = 0; i < but1.length; i++) {
+        if (i != curCategory1) but1[i].classList.remove("selected");
+      }
       SetInfo();
     });
   }

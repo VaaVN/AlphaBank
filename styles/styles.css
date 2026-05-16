@@ -92,6 +92,16 @@ p {
   width: fit-content;
   background-color: rgb(238, 237, 237);
 }
+.headAds {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  .selector {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
 .selectBut {
   border-radius: 48px;
   justify-content: center;
@@ -241,6 +251,14 @@ img {
   grid-template-columns: repeat(2, 1fr);
   gap: 26px;
 }
+.serviceMenu {
+  height: 450px;
+  width: 100%;
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 26px;
+}
 .onlyPc {
   display: flex;
 }
@@ -311,6 +329,7 @@ img {
     display: inherit;
     h {
       font-size: 48px;
+      text-align: center;
       color: aliceblue;
       font-weight: 700;
     }
@@ -375,5 +394,10 @@ img {
   .about {
     height: 800px;
     grid-template-columns: repeat(1, 1fr);
+  }
+  .serviceMenu {
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
   }
 }
