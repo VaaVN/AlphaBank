@@ -244,6 +244,66 @@
           </div>
           <div class="serviceMenu" data-js="serviceMenu"></div>
         </div>
+        <div class="menu">
+          <h1>Подать заявку на Кредит</h1>
+          <form class="form" action="">
+            <div
+              class="categor"
+              style="width: 80%; justify-content: space-between"
+            >
+              <div class="list">
+                <label for="">
+                  <p style="color: black">Сумма вклада</p>
+                  <input required name="sum" type="number"
+                /></label>
+                <label for="">
+                  <input type="hidden" name="time" id="timeData" value="36" />
+                  <div class="time">
+                    <div class="timeBut" data-value="3">3 месяца</div>
+                    <div class="timeBut" data-value="4">4 месяца</div>
+                    <div class="timeBut" data-value="6">6 месяцев</div>
+                    <div class="timeBut" data-value="9">9 месяцев</div>
+                    <div class="timeBut" data-value="12">1 год</div>
+                    <div class="timeBut" data-value="18">1,5 года</div>
+                    <div class="timeBut" data-value="24">2 года</div>
+                    <div class="timeBut selectTime" data-value="36">3 года</div>
+                  </div>
+                  /></label
+                >
+                <p style="color: black">Условия:</p>
+                <label style="flex-direction: row" for="">
+                  <input name="percent" type="checkbox" />
+                  <p style="color: black">
+                    Без вывода процентов (капитализация)
+                  </p></label
+                >
+                <label style="flex-direction: row" for="">
+                  <input name="add" type="checkbox" />
+                  <p style="color: black">
+                    С пополнением и частичным снятием
+                  </p></label
+                >
+              </div>
+              <div class="list">
+                <h3>Информация о кредите</h3>
+              </div>
+            </div>
+            <p id="status">Статус</p>
+            <div
+              class="categor"
+              style="justify-content: space-between; width: 100%"
+            >
+              <button
+                class="button"
+                type="reset"
+                style="background-color: rgb(44, 39, 39)"
+              >
+                <p>Сбросить</p>
+              </button>
+              <button class="button" type="submit"><p>Отправить</p></button>
+            </div>
+          </form>
+        </div>
       </div>
     </main>
     <script src="./script.js"></script>

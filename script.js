@@ -1,4 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbw7C1mSp8sTvrkVeDcrsTCkn7TgoYQw8oAnCnMOwMe9Y1gsvoAUphUnwEC_s_UFPwkawg/exec";
+
+  const form = document.querySelector("form");
+  const status = document.getElementById("status");
+  const buttons = document.querySelectorAll(".timeBut");
+  const hiddenInput = document.getElementById("timeData");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      buttons.forEach((b) => b.classList.remove("selectTime"));
+      btn.classList.add("selectTime");
+      hiddenInput.value = btn.getAttribute("data-value");
+      console.log(hiddenInput.value);
+    });
+  });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    status.textContent = "waiting";
+
+    let formData = new FormData(form);
+    formData.append("submittedAt", new Date().toISOString());
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData,
+      });
+      status.textContent = "success";
+      form.reset();
+    } catch (error) {
+      status.textContent = "error";
+      console.error(error);
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   const bankOffers = [
     {
       category: "Для всех",
